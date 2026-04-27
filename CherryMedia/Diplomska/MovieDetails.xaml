@@ -1,0 +1,53 @@
+﻿<Window x:Class="Diplomska.MovieDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplomska"
+        mc:Ignorable="d"
+        Title="MovieDetails" Height="450" Width="800">
+    <Grid Background="#121212">
+        <StackPanel Margin="30">
+            <TextBlock Text="{Binding Title}" FontSize="36" FontWeight="Bold" Foreground="White"/>
+            <TextBlock Text="{Binding Year}" FontSize="18" Foreground="Gray" Margin="0,0,0,20"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="{Binding ImagePath}" Stretch="Uniform" Margin="0,0,20,0"/>
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="🎬 Režiser:" Foreground="Gold" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Director}" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="🎭 Žanr:" Foreground="Gold" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Genre}" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="⭐ IMDb Ocena:" Foreground="Gold" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Rating}" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="📝 Opis:" Foreground="Gold" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Plot}" Foreground="White" TextWrapping="Wrap" FontSize="14"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                        <TextBlock Text="Tvoja ocena: " VerticalAlignment="Center" Foreground="White" Margin="0,0,10,0"/>
+                        <Button Content="⭐" Click="Rate_Click" Tag="1" Background="Transparent" BorderThickness="0" FontSize="20"/>
+                        <Button Content="⭐" Click="Rate_Click" Tag="2" Background="Transparent" BorderThickness="0" FontSize="20"/>
+                        <Button Content="⭐" Click="Rate_Click" Tag="3" Background="Transparent" BorderThickness="0" FontSize="20"/>
+                        <Button Content="⭐" Click="Rate_Click" Tag="4" Background="Transparent" BorderThickness="0" FontSize="20"/>
+                        <Button Content="⭐" Click="Rate_Click" Tag="5" Background="Transparent" BorderThickness="0" FontSize="20"/>
+
+                        <TextBlock x:Name="CurrentRatingText" Text="Ni ocenjeno" Foreground="Gold" Margin="15,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+
+                    <Button Content="PLAY " Click="Play_Click" Margin="0,30,0,0" Height="40" Background="#37415c" Foreground="White"/>
+                </StackPanel>
+                
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

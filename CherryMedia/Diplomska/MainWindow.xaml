@@ -1,0 +1,82 @@
+﻿<Window x:Class="Diplomska.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplomska"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+
+    <!-- Dodano ozadje -->
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#242e49" Offset="0.0" />
+            <GradientStop Color="#37415c" Offset="0.33" />
+            <GradientStop Color="#181a2f" Offset="0.66" />
+            <GradientStop Color="#54162b" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Window.Resources>
+        <!-- Slog za vse gumbe (hover efekt, centriranje) -->
+        <Style x:Key="HoverButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#426EB5" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2"
+                                CornerRadius="5" Padding="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2A7ACF" />
+                    <Setter Property="BorderBrush" Value="White" />
+                    <Setter Property="BorderThickness" Value="3"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Window.Resources>
+
+    <Grid>
+        <!-- ContentControl za dinamično vsebino -->
+        <ContentControl Name="MainContent">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
+                <TextBlock Text="MediaPlayer" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0 0 0 20" TextAlignment="Center" />
+                <TextBlock Text="Log in to your Account" FontSize="20" FontWeight="SemiBold" Foreground="White" Margin="0 0 0 10" TextAlignment="Center" />
+                <TextBlock Text="Log in to your account so you can continue building and editing your onboarding flows."
+                           FontSize="12" Foreground="LightGray" TextWrapping="Wrap" Margin="0 0 0 20" TextAlignment="Center" />
+
+                <!-- Email in Password Polja -->
+                <StackPanel Orientation="Vertical" Margin="0 10 0 20">
+                    <TextBox Name="EmailTextBox" Width="300" Height="30" Margin="0 5" HorizontalAlignment="Center" />
+                    <PasswordBox Name="PasswordBox" Width="300" Height="30" Margin="0 5" HorizontalAlignment="Center" />
+                </StackPanel>
+
+
+                <!-- Login Button -->
+                <Button Name="LoginButton" Content="LOG IN" Style="{StaticResource HoverButtonStyle}"
+                        HorizontalAlignment="Center" Margin="0 10 0 0" Click="LoginButton_Click" />
+
+              
+
+                <TextBlock Text="No account?" FontSize="14" Foreground="White" Margin="0 10 0 5" TextAlignment="Center" />
+                <Button Name="SignUpButton" Content="SIGN UP" Style="{StaticResource HoverButtonStyle}"
+                        HorizontalAlignment="Center" Click="SignUpButton_Click" />
+            </StackPanel>
+        </ContentControl>
+    </Grid>
+</Window>

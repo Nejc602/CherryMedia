@@ -1,0 +1,94 @@
+## ================================================
+## Visual Studio & C# (VS 2026)
+## ================================================
+
+# Build rezultati (izvršljive datoteke in knjižnice)
+[Bb]in/
+[Oo]bj/
+[Log]/
+
+# Skrita mapa Visual Studio nastavitev
+.vs/
+.vscode/
+
+# Uporabniške nastavitve in predpomnilnik
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# NuGet paketi (se samodejno obnovijo)
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Objavljanje (Publish) in Azure nastavitve
+*.publish.xml
+*.azurepubs
+*.pubxml
+*.pubxml.user
+
+# Rezultati testiranj
+TestResults/
+*.trx
+*.screenshot
+
+
+## ================================================
+## Multimedia (Filmi in Avdio)
+## ================================================
+
+# Video datoteke
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.mpg
+*.mpeg
+
+# Avdio datoteke
+*.mp3
+*.wav
+*.flac
+*.m4a
+*.aac
+*.ogg
+*.wma
+
+
+## ================================================
+## Varnost in Sistemi
+## ================================================
+
+# Skrivnosti in okoljske spremenljivke
+.env
+appsettings.Development.json
+secrets.json
+*.pem
+*.key
+
+# Baze podatkov
+*.mdf
+*.ldf
+*.ndf
+
+# Sistemske datoteke (macOS in Windows)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+## ================================================
+## Arhivi in diski
+## ================================================
+*.zip
+*.7z
+*.rar
+*.iso
+*.img

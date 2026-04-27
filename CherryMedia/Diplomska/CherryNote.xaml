@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="Diplomska.CherryNote"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Height="575">
+    <Grid Background="#242e49">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#37415c" BorderBrush="#181a2f" BorderThickness="1">
+            <StackPanel Margin="10">
+                <Button Content="Nazaj" 
+        Background="#426EB5" 
+        Foreground="White" 
+        Margin="0 0 0 10"
+        Click="BackToLoggedIn_Click"/>
+                <TextBlock Text="Playlists" FontSize="16" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                <Button Content="Create Playlist" Background="#426EB5" Foreground="White" Margin="5"
+                        Click="CreatePlaylist_Click"/>
+                <Button Content="Delete Playlist" Background="Red" Foreground="White" 
+        Click="DeletePlaylist_Click" Margin="0 5 0 10"/>
+                <ListView Name="PlaylistView" Background="#242e49" Foreground="White" BorderThickness="0"
+                          SelectionChanged="PlaylistView_SelectionChanged"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Name="WelcomeScreen" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Dobrodošli!" FontSize="30" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Ustvari playlist, da začneš" FontSize="16" Foreground="LightGray" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <Grid Name="PlaylistContent" Grid.Column="1" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#37415c" CornerRadius="5" Margin="0 0 0 10">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Image Name="PlaylistImage" Width="100" Height="100" Margin="0 10 10 0"/>
+                    <StackPanel>
+                        <TextBlock Name="PlaylistTitle" Text="Playlist Name" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Name="PlaylistDetails" Text="X songs, Y minutes" FontSize="14" Foreground="LightGray"/>
+                        <Button Content="Add Song" Background="#426EB5" Foreground="White" Margin="10 0 0 0"
+                                Click="AddSongToPlaylist_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel Name="SongsList"/>
+            </ScrollViewer>
+        </Grid>
+
+       
+        <MediaElement Name="MediaPlayer" Grid.Row="2" Grid.ColumnSpan="2"
+                      LoadedBehavior="Manual" UnloadedBehavior="Stop"
+                      Visibility="Hidden"/>
+
+      
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="#37415c" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Center" Margin="10">
+                <Image Name="CurrentSongImage" Width="50" Height="50" Margin="0 0 10 0"/>
+                <StackPanel>
+                    <TextBlock Text="Currently playing:" FontSize="14" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Name="CurrentSongTitle" Text="Artist, Song Name" FontSize="12" Foreground="White"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Slider Name="ProgressSlider"
+        Grid.Column="0"
+        Width="400"
+        Minimum="0"
+        Maximum="100"
+        Margin="10 0 0 10"
+        PreviewMouseLeftButtonDown="ProgressSlider_PreviewMouseLeftButtonDown"
+        MouseLeftButtonUp="ProgressSlider_MouseLeftButtonUp"
+        ValueChanged="ProgressSlider_ValueChanged"/>
+                    <Label Name="TimeLabel" Content="00:00" Foreground="White" Grid.ColumnSpan="2" Margin="425,-5,-25,5"/>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Previous" Width="100" Background="#426EB5" Foreground="White" Click="PreviousClick"/>
+                    <Button Content="Stop" Width="100" Background="#426EB5" Foreground="White" Click="StopClick"/>
+                    <Button Content="Play" Width="100" Background="#426EB5" Foreground="White" Click="PlayClick"/>
+                    <Button Content="Pause" Width="100" Background="#426EB5" Foreground="White" Click="PauseClick"/>
+                    <Button Content="Next" Width="100" Background="#426EB5" Foreground="White" Click="NextClick"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
