@@ -25,7 +25,7 @@ namespace Diplomska
     {
         private CherryFrame.Movie _selectedMovie;
 
-        private string connectionString = "Data Source=C:\\Projects\\CherryMedia\\Diplomska\\Diplomska\\Diplomska\\SqLite_Connection.db;Version=3;";
+        private string connectionString = "Data Source=C:\\Projects\\CherryMedia\\CherryMedia\\CherryMediaFiles\\SqLite_Connection.db;Version=3;";
         public MovieDetails(CherryFrame.Movie movie)
         {
             InitializeComponent();

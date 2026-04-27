@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="herobanner.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.5-beta1" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
