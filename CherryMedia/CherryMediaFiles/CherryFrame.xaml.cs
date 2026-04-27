@@ -19,8 +19,8 @@ namespace Diplomska
         private List<Movie> allMovies = new List<Movie>();
 
      
-        private readonly string folderPath = @"C:\Projects\CherryMedia\Diplomska\Diplomska\Diplomska\Movies\";
-        private readonly string connectionString = @"Data Source=C:\Projects\CherryMedia\Diplomska\Diplomska\Diplomska\SQLite_Connection.db;Version=3;";
+        private readonly string folderPath = @"C:\Projects\CherryMedia\CherryMedia\CherryMediaFiles\Movies\";
+        private readonly string connectionString = @"Data Source=C:\Projects\CherryMedia\CherryMedia\CherryMediaFiles\SQLite_Connection.db;Version=3;";
 
         public CherryFrame()
         {
@@ -126,14 +126,6 @@ namespace Diplomska
 
         private void AddMovieToUI(Movie movie)
         {
-
-
-
-
-
-
-
-
 
             StackPanel movieItem = new StackPanel
             {

@@ -9,7 +9,7 @@ namespace Diplomska
 {
     public partial class MainWindow : Window
     {
-        private string dbPath = "C:\\Projects\\CherryMedia\\Diplomska\\Diplomska\\Diplomska\\SQLite_Connection.db";
+        private string dbPath = "C:\\Projects\\CherryMedia\\CherryMedia\\CherryMediaFiles\\SQLite_Connection.db";
         private string connectionString;
 
         public MainWindow()

@@ -12,7 +12,7 @@
         </Grid.Background>
 
         <Grid Height="180" VerticalAlignment="Top" ClipToBounds="True">
-            <Image Source="C:\Projects\CherryMedia\Diplomska\Diplomska\Diplomska\Pictures/herobanner.jpg"
+            <Image Source="C:\Projects\CherryMedia\CherryMedia\CherryMediaFiles\Pictures/herobanner.jpg"
             Stretch="UniformToFill"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"

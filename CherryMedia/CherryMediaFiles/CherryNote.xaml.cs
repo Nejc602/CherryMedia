@@ -20,7 +20,7 @@ namespace Diplomska
         private DispatcherTimer timer;
         private bool isDraggingSlider = false;
         private string currentSongPath = null;
-        private string connectionString = "Data Source=C:\\Projects\\CherryMedia\\Diplomska\\Diplomska\\Diplomska\\SqLite_Connection.db;Version=3;";
+        private string connectionString = "Data Source=C:\\Projects\\CherryMedia\\CherryMedia\\CherryMediaFiles\\SqLite_Connection.db;Version=3;";
 
 
         public CherryNote()
